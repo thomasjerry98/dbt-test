@@ -29,7 +29,7 @@ new_orders AS (
     
     {% if is_incremental() %}
     -- Only select new records during incremental runs
-    WHERE o.order_date > (SELECT MAX(order_date) FROM {{ this }})
+    WHERE o.order_date >= (SELECT MAX(order_date) FROM {{ this }})
     {% endif %}
 )
 

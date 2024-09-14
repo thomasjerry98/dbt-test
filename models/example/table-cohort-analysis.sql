@@ -19,14 +19,7 @@ new_orders AS (
         o.customer_id,
         f.first_order_date,  -- Always use the customer's first order date
         o.order_date,
-        TIMESTAMP_DIFF(o.order_date, f.first_order_date, MONTH) AS months_since_first_order,  -- Calculate months since first order
-        
-        -- New column to solve the problem: this will hold the customer_id for the first order and repeat it for all rows
-        CASE 
-            WHEN TIMESTAMP_DIFF(o.order_date, f.first_order_date, MONTH) = 0 THEN o.customer_id
-            ELSE NULL -- or you could put o.customer_id here if you want to repeat it
-        END AS first_order_customer_id
-    
+        TIMESTAMP_DIFF(o.order_date, f.first_order_date, MONTH) AS months_since_first_order  -- Calculate months since first order
     FROM
         raw.orders AS o
     JOIN

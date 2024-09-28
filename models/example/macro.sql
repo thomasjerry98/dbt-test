@@ -15,4 +15,4 @@ JOIN
 JOIN
     raw.products p ON o.Product_ID = p.Product_ID
 
--- fixing the dbt model huraaaay
+-- fixing the dbt model huraaaay helloo

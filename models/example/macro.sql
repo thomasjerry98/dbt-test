@@ -18,3 +18,5 @@ JOIN
 -- fixing the dbt model huraaaay hello
 
 -- listen this is my second branch commit
+
+hahahha

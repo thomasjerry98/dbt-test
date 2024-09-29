@@ -15,4 +15,6 @@ JOIN
 JOIN
     raw.products p ON o.Product_ID = p.Product_ID
 
--- fixing the dbt model huraaaay helloo
+-- fixing the dbt model huraaaay hello
+
+-- listen this is my second branch commit
